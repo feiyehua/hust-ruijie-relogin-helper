@@ -55,11 +55,11 @@ def get_response(uid, pwd):
             logger.info("Relogin " + relogin_info)
         except Exception as exc:
             logger.info("Relogin trouble occurred: %s " % exc)
-    job.enter(60, 0, get_response, (uid, pwd))
+    #job.enter(60, 0, get_response, (uid, pwd))
 
 
 def read_data():
-    data = load(open('./info.yml', 'rb'), Loader=Loader)
+    data = load(open('./password.yml', 'rb'), Loader=Loader)
     return data['info']
 
 
@@ -139,8 +139,9 @@ def relogin(uid, pwd):
 
 
 def monitor(uid, pwd):
-    job.enter(0, 0, get_response, (uid, pwd))
-    job.run()
+    #job.enter(0, 0, get_response, (uid, pwd))
+    #job.run()
+    get_response(uid, pwd)
 
 
 if __name__ == '__main__':
