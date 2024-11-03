@@ -4,9 +4,13 @@
 
 ### 一些修改
 Python要求使用虚拟环境安装yaml和request库，运行env.sh即可完成初次配置。
+
 将密码文件修改为password.yml，并加入gitignore，防止密码泄漏
+
 运行wifiauth.sh即可连接，可以将wifiauth.sh添加到path。
+
 去除了程序的后台驻留。
+
 去除了已经打包的exe文件。
 
 
